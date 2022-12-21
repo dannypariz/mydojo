@@ -39,7 +39,7 @@ jf rt build-publish "${JFROG_CLI_BUILD_NAME}" "${JFROG_CLI_BUILD_NUMBER}"
 
 jf rt build-promote "${JFROG_CLI_BUILD_NAME}" "${JFROG_CLI_BUILD_NUMBER}" "${TESTREPO}" --status TEST --comment "unit tests successul"
 
-jf docker scan "$JPD/$DEVREPO/$PRJ:$JFROG_CLI_BUILD_NUMBER" --format=json
+jf docker scan "${JPD}/${DEVREPO}/${PRJ}:${JFROG_CLI_BUILD_NUMBER}" --format=json
 jf docker scan "${JPD}/${DEVREPO}/${PRJ}:${JFROG_CLI_BUILD_NUMBER}"
 
 jf rt build-promote "${JFROG_CLI_BUILD_NAME}" "${JFROG_CLI_BUILD_NUMBER}" "${QAREPO}" --status QA --comment "security checks successful"
